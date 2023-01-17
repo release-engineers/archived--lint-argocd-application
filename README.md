@@ -1,2 +1,2 @@
-# lint-argo
+# lint-argocd-application
 ArgoCD Application linter
