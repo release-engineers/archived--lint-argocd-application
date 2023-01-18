@@ -30,18 +30,17 @@ def lint_document(document_source, document_source_index, document):
     if document["kind"] != "Application":
         log_info(document_source, document_source_index, "document skipped, kind is not Application")
         return
+    log_info(document_source, document_source_index, "document is an ArgoCD Application")
     queue = []
     queue.extend(rules.top)
-    rules_applied = 0
     while len(queue) > 0:
         rule = queue.pop()
         try:
-            rules_applied += 1
+            log_info(document_source, document_source_index, "running rule {}".format(rule.__name__))
             continuations = rule(document)
             queue = continuations + queue
         except Exception as e:
-            log_error(document_source, document_source_index, "rule {} failed: {}".format(rule.__name__, e))
-    log_info(document_source, document_source_index, "{} linter rules applied".format(rules_applied))
+            log_error(document_source, document_source_index, "failed rule {}: {}".format(rule.__name__, e))
 
 
 def lint_file(yaml_source):
