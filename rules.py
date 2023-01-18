@@ -4,7 +4,7 @@ def rule_metadata_finalizer(document):
     if "finalizers" not in document["metadata"]:
         raise Exception("missing .metadata.finalizers")
     if "resources-finalizer.argocd.argoproj.io" not in document["metadata"]["finalizers"]:
-        raise Exception("missing .metadata.finalizers.resources-finalizer.argocd.argoproj.io")
+        raise Exception("missing .metadata.finalizers does not contain resources-finalizer.argocd.argoproj.io")
     return []
 
 
