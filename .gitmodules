@@ -1,0 +1,3 @@
+[submodule "argocd-example-apps-official"]
+	path = argocd-example-apps-official
+	url = https://github.com/argoproj/argocd-example-apps.git
