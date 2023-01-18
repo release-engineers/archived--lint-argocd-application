@@ -6,12 +6,22 @@ ArgoCD Application linter
 
 ### Prerequisites
 
+- Python 3
+- Kubectl
 - Helm 3
 - Kustomize
-- Kubectl
 
-### Generate Test Applications
+### Setup
 
 ```bash
-./generate.sh
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Usage
+
+```bash
+./regenerate-yamls.sh
+./lint.py build/*.yaml
 ```
