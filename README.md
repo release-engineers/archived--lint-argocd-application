@@ -1,5 +1,7 @@
 # lint-argocd-application
 
+[![Status: Alpha](https://img.shields.io/badge/status-alpha-red)](https://release-engineers.com/open-source-badges/)
+
 Lints ArgoCD Applications, going so far as to run actual (dry-run) kubectl commands and git clone-s to validate the application.
 
 This solution runs tools such as Git, Kubectl, Helm, Kustomize, etc. Ensure that git is authorized to clone your repositories, and that kubectl is
